@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "click-boilerplate"
+dynamic = ["version"]
+description = "A boilerplate project for Click-based CLI applications."
+authors = [
+  { name = "Remi Noel", email = "remi@rnoel.net" }
+]
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = [
+  "click>=8.0,<9.0"
+]
+
+[project.optional-dependencies]
+dev = [
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+click-boilerplate = "click_boilerplate.cli:root"
+
+[tool.setuptools_scm]
